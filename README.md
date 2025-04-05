@@ -1,31 +1,26 @@
 # visibrain_test
 
 Frontend:
- $ cd frontend-vue
- $ npm run serve
 
-   App running at:
-  - Local:   http://localhost:8080/
+npm create vite@latest frontend-vue -- --template vue
+cd frontend-vue
+npm install
+npm run dev
 
-  Note that the development build is not optimized.
-  To create a production build, run npm run build.
-
+Open http://localhost:5173
 
 
-  Backend:
-  Create main.py
-  Run the server with:
-  fastapi dev main.py
 
-   Serving at: http://127.0.0.1:8000                  
-                                                   
-   API docs: http://127.0.0.1:8000/docs              
-                                                    
-   Running in development mode, for production use:  
-                                                     
-   fastapi run                                       
+Backend:
+
+Create virtual env and activate it :
+$ python -m venv venv
+$ venv\Scripts\activate (Windows)
 
 
- Interactive API docs¶
-go to http://127.0.0.1:8000/docs (or)
-go to http://127.0.0.1:8000/redoc.             
+Create main.py and run the server with:
+$ uvicorn main:app --reload
+
+Serving at: http://127.0.0.1:8000                                                              
+API docs: http://127.0.0.1:8000/docs              
+                                                             

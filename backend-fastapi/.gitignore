@@ -1,0 +1,32 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+
+# Virtual environment (if used)
+venv/
+*.venv
+
+# FastAPI development server (Uvicorn) related
+*.log
+*.pid
+*.sock
+
+# Dependencies installed via pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment variables and secret keys
+.env
+.env.local
+
+# IDE or editor configurations
+.vscode/
+.idea/
+
+# macOS specific
+.DS_Store
+
+# Other system files
+Thumbs.db
