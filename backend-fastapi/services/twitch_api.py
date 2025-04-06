@@ -41,4 +41,32 @@ async def get_game_id(game_name: str, twitch_access_token: str):
         else:
             print("Error: No valid data found in the response.")
             return None
-    
+
+
+
+async def get_twitch_video(game_id: int, twitch_access_token: str):
+    url = "https://api.twitch.tv/helix/videos"
+    headers = {
+        "Authorization": f"Bearer {twitch_access_token}",
+        "Client-ID": CLIENT_ID
+    }
+    params = {
+        "game_id": game_id
+    }
+
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url, headers=headers, params=params)
+        
+        
+        if response.status_code == 200:
+            data = response.json()
+            
+            if "data" in data and len(data["data"]) > 0:
+                return data["data"] 
+            
+                print("No videos found for the given game ID.")
+                return None
+        else:
+            print(f"Error: {response.status_code} - {response.text}")
+            return None
+        
