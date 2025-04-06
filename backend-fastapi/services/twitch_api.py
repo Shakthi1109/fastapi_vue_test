@@ -44,7 +44,7 @@ async def get_game_id(game_name: str, twitch_access_token: str):
 
 
 
-async def get_twitch_video(game_id: int, twitch_access_token: str):
+async def get_twitch_videos(game_id: int, twitch_access_token: str):
     url = "https://api.twitch.tv/helix/videos"
     headers = {
         "Authorization": f"Bearer {twitch_access_token}",
@@ -63,10 +63,18 @@ async def get_twitch_video(game_id: int, twitch_access_token: str):
             
             if "data" in data and len(data["data"]) > 0:
                 return data["data"] 
-            
+            else:
                 print("No videos found for the given game ID.")
                 return None
         else:
             print(f"Error: {response.status_code} - {response.text}")
             return None
         
+
+async def search_videos_by_game(game_name: str):
+    token = await get_twitch_token()
+    game_id = await get_game_id(game_name, token)
+    if not game_id:
+        return {"error": "Game not found"}
+    videos = await get_twitch_videos(game_id, token)
+    return videos
