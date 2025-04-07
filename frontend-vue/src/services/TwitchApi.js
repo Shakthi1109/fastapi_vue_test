@@ -18,8 +18,7 @@ export const searchVideos = async (game) => {
         thumbnail_url: video.thumbnail_url.replace('%{width}', '320').replace('%{height}', '180'), // Replace width and height
       }));
     } else {
-      console.error("Invalid response format:", response.data);
-      return [];  // Return an empty array if the format is invalid
+      return 0;
     }
   } catch (error) {
     console.error('Error fetching videos:', error);

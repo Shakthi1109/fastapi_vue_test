@@ -13,8 +13,8 @@ videos_collection = db["videos"]
 queries_collection = db["search_queries"]
 
 
-async def save_search_query(query: str):
-    await queries_collection.insert_one({
-        "query": query,
-        "timestamp": datetime.utcnow()
-    })
+# async def save_search_query(query: str):
+#     await queries_collection.insert_one({
+#         "query": query,
+#         "timestamp": datetime.utcnow()
+#     })
