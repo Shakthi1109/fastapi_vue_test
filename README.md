@@ -5,7 +5,7 @@ Frontend:
 npm create vite@latest frontend-vue -- --template vue
 cd frontend-vue
 npm install
-npm run serve
+npm run dev
 
 Open http://localhost:5173
 

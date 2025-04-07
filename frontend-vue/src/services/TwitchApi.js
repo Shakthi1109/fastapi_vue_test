@@ -13,7 +13,7 @@ export const searchVideos = async (game) => {
       return response.data.map((video) => ({
         id: video.id,
         title: video.title,
-        description: video.description || 'No description',  // Default to "No description" if it's empty
+        duration: video.duration,
         view_count: video.view_count,
         thumbnail_url: video.thumbnail_url.replace('%{width}', '320').replace('%{height}', '180'), // Replace width and height
       }));
