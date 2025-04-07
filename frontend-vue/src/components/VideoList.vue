@@ -12,7 +12,7 @@
       <div class="video-details">
         <h3>{{ video.title }}</h3>
         <p>Views: {{ video.view_count }}</p>
-        <p>{{ video.description }}</p>
+        <p>Duration:{{ video.duration }}</p>
       </div>
     </div>
   </div>
