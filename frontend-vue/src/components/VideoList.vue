@@ -1,49 +1,59 @@
 <template>
+  
+    <div v-if="hasSearched && videos.length === 0" class="video-info">
+      No videos found for this game.
+    </div>
+
+    <div class="video-info">{{ videos.length }} videos found</div>
+    
     <div class="video-list">
-      <div v-for="video in videos" :key="video.id" class="video-card">
-        <img :src="video.thumbnail_url" :alt="video.title" />
+    <div v-for="video in videos" :key="video.id" class="video-item">
+      <img :src="video.thumbnail_url" :alt="video.title" class="thumbnail" />
+      <div class="video-details">
         <h3>{{ video.title }}</h3>
+        <p>Views: {{ video.view_count }}</p>
         <p>{{ video.description }}</p>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    props: {
-      videos: Array  // List of videos passed as a prop
-    }
-  };
-  </script>
-  
-  <style scoped>
-  .video-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .video-card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .video-card img {
-    width: 100%;
-    border-radius: 5px;
-  }
-  
-  .video-card h3 {
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
-  
-  .video-card p {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  </style>
-  
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    videos: Array, // Receive list of videos from parent component
+    hasSearched: Boolean, // Track if a search has been made
+  },
+};
+</script>
+
+<style scoped>
+.video-list {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.video-item {
+  width: 250px;
+  background-color: #3c3c3c;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.thumbnail {
+  width: 100%;
+  border-radius: 8px;
+}
+.video-details {
+  padding: 10px 0;
+}
+
+.video-info {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+</style>

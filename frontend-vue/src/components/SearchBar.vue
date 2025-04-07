@@ -1,49 +1,61 @@
 <template>
-    <div class="search-bar-container">
-      <input v-model="query" @keyup.enter="handleSearch" placeholder="Search for a game" />
-      <button @click="handleSearch">Search</button>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        query: ""  // Store the search query
-      };
-    },
-    methods: {
-      handleSearch() {
-        this.$emit("search", this.query);  // Emit the search query to the parent
+  <div>
+    <!-- Input field -->
+    <input
+      v-model="gameName"
+      type="text"
+      placeholder="Search for a game..."
+      @keyup.enter="onSearch"     
+      class="search-input"
+    /> <!-- Triggers search on Enter key -->
+
+    <!-- Search button -->
+    <button @click="onSearch" class="search-button">
+      Search
+    </button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      gameName: '', // Stores user input
+    };
+  },
+  methods: {
+    // Emit search event to the parent component
+    onSearch() {
+      if (this.gameName.trim()) {
+        this.$emit('search', this.gameName);
       }
-    }
-  };
-  </script>
-  
-  <style scoped>
-  .search-bar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  input {
-    padding: 8px;
-    font-size: 1rem;
-  }
-  
-  button {
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  </style>
-  
+    },
+  },
+};
+</script>
+
+<style scoped>
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+</style>
