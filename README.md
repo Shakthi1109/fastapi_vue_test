@@ -1,7 +1,6 @@
-![Screenshot (30)](https://github.com/user-attachments/assets/4934d9cd-c727-4d3d-9592-647e8d10d99f)
-
-
 # 🎮 Twitch Video Search Web App
+
+![Screenshot (30)](https://github.com/user-attachments/assets/4934d9cd-c727-4d3d-9592-647e8d10d99f)
 
 This full-stack web app lets users search for Twitch game videos and view trending search terms using:
 
