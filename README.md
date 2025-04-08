@@ -101,12 +101,12 @@ uvicorn main:app --reload
 
 The backend API will be available at:
 
-📍 http://localhost:8000
-Serving at: http://127.0.0.1:8000
-API docs: http://127.0.0.1:8000/docs 
+- 📍 http://localhost:8000
+- Serving at: http://127.0.0.1:8000
+- API docs: http://127.0.0.1:8000/docs 
 
 
-
+---
 
 ## 🌐 Frontend Setup (Vue.js)
 Navigate to frontend directory
@@ -132,7 +132,8 @@ yarn dev
 ```
 
 The frontend will be available at:
-📍 http://localhost:5173
+
+-📍 http://localhost:5173
 
 
-**Have fun coding with Shakthivel Murugavel**
+**❣️Have fun coding with Shakthivel Murugavel❣️**
