@@ -6,16 +6,14 @@
     <SearchBar @search="onSearch" />
 
     <!-- Loading message -->
-    <div v-if="isLoading" class="info">Loading videos...</div>
+    <div v-if="isLoading" class="info"> Loading videos... </div>
 
     <!-- No videos message (only after a search was made and not loading) -->
-    <div v-if="hasSearched && !isLoading && videos.length === 0" class="info">
-      No videos found for this game.
-    </div>
+    <div v-if="hasSearched && !isLoading && videos.length === 0" class="info"> No videos found for this game. </div>
 
-    <!-- Video list -->
     <VideoList v-if="videos.length > 0" :videos="videos" :hasSearched="hasSearched" />
-    </div>
+    
+  </div>
 </template>
 
 <script>
@@ -43,22 +41,23 @@ export default {
     },
 
     async fetchVideos() {
-    if (this.game) {
-      this.isLoading = true;
-      this.hasSearched = true;
+      if (this.game) {
+        this.isLoading = true;
+        this.hasSearched = true;
 
-      try {
-        const videoResults = await searchVideos(this.game);
-        this.videos = Array.isArray(videoResults) ? videoResults : [];
-      } catch (error) {
-        console.error("Error fetching videos:", error);
-        this.videos = []; // fallback if API fails
-      } finally {
-        this.isLoading = false;
+        try {
+          const videoResults = await searchVideos(this.game);
+          this.videos = Array.isArray(videoResults) ? videoResults : [];
+        } catch (error) {
+          console.error("Error fetching videos:", error);
+          this.videos = []; // fallback if API fails
+        } finally {
+          this.isLoading = false;
+        }
       }
-    }
+    },
   },
-  },
+  
   mounted() {
     // Refresh videos every 2 minutes
     setInterval(() => {
@@ -74,5 +73,10 @@ export default {
 h1 {
   text-align: center;
   margin-top: 20px;
+}
+
+.info {
+  padding-top: 20px;
+  font-size: 16px;
 }
 </style>

@@ -1,6 +1,8 @@
 import os
 import httpx
 from dotenv import load_dotenv
+from db.mongo import test_mongo_connection, db_write_search_history
+
 
 # Getting credentials from environment file
 load_dotenv()
@@ -39,7 +41,7 @@ async def get_game_id(game_name: str, twitch_access_token: str):
         if "data" in data and len(data["data"]) > 0:
             return data["data"][0]["id"]
         else:
-            print("Error: No valid data found in the response.")
+            print("Error: No valid Game ID data found in the response.")
             return None
 
 
@@ -75,6 +77,18 @@ async def search_videos_by_game(game_name: str):
     token = await get_twitch_token()
     game_id = await get_game_id(game_name, token)
     if not game_id:
-        return {"error": "Game not found"}
+        return {"error": "Game ID not found"}
     videos = await get_twitch_videos(game_id, token)
+    if videos:
+        print(f"Writing search history for '{game_name}' to MongoDB...")
+        
+        db_check = await test_mongo_connection()
+        if db_check:
+            print("db_check success: "+ db_check)
+        else:
+            print("DB not working")
+        await db_write_search_history(game_name)
+    
     return videos
+
+

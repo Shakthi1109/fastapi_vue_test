@@ -15,6 +15,7 @@ export const searchVideos = async (game) => {
         title: video.title,
         duration: video.duration,
         view_count: video.view_count,
+        url: video.url,
         thumbnail_url: video.thumbnail_url.replace('%{width}', '320').replace('%{height}', '180'), // Replace width and height
       }));
     } else {
@@ -22,6 +23,6 @@ export const searchVideos = async (game) => {
     }
   } catch (error) {
     console.error('Error fetching videos:', error);
-    return [];
+    return 0;
   }
 };

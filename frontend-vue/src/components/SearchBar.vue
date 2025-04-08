@@ -1,18 +1,7 @@
 <template>
   <div>
-    <!-- Input field -->
-    <input
-      v-model="gameName"
-      type="text"
-      placeholder="Search for a game..."
-      @keyup.enter="onSearch"     
-      class="search-input"
-    /> <!-- Triggers search on Enter key -->
-
-    <!-- Search button -->
-    <button @click="onSearch" class="search-button">
-      Search
-    </button>
+    <input v-model="gameName" placeholder="Search for a game..."  @keyup.enter="onSearch" type="text" class="search-input"/>
+    <button @click="onSearch" class="search-button"> Search </button>
   </div>
 </template>
 
@@ -36,23 +25,18 @@ export default {
 
 <style scoped>
 .search-input {
-  padding: 10px;
+  min-height: 40px;
   font-size: 16px;
-  width: 100%;
+  font-weight: bold;
   max-width: 400px;
-  margin: 10px 0;
-  box-sizing: border-box;
+  padding-left: 10px;
+  margin-right: 20px;
 }
 
 .search-button {
-  padding: 10px 20px;
   font-size: 16px;
-  margin-left: 10px;
-  cursor: pointer;
   background-color: #4CAF50;
   color: white;
-  border: none;
-  border-radius: 4px;
 }
 
 .search-button:hover {
