@@ -21,8 +21,7 @@ $ venv\Scripts\activate (Windows)
 Create main.py and run the server with:
 $ uvicorn main:app --reload
 
-Serving at: http://127.0.0.1:8000                                                              
-API docs: http://127.0.0.1:8000/docs         
+        
 
 
 
@@ -88,7 +87,7 @@ source venv/bin/activate
 
 **4. Create a .env file:**
 Create a file called .env in backend-fastapi/ with the following:
-````
+```
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/test?retryWrites=true&w=majority
 TWITCH_CLIENT_ID=your_twitch_client_id
 TWITCH_CLIENT_SECRET=your_twitch_client_secret
@@ -103,6 +102,8 @@ uvicorn main:app --reload
 The backend API will be available at:
 
 📍 http://localhost:8000
+   Serving at: http://127.0.0.1:8000                                                              
+   API docs: http://127.0.0.1:8000/docs 
 
 
 
