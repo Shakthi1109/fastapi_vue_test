@@ -1,30 +1,3 @@
-# visibrain_test
-
-Frontend:
-
-npm create vite@latest frontend-vue -- --template vue
-cd frontend-vue
-npm install
-npm run dev
-
-Open http://localhost:5173
-
-
-
-Backend:
-
-Create virtual env and activate it :
-$ python -m venv venv
-$ venv\Scripts\activate (Windows)
-
-
-Create main.py and run the server with:
-$ uvicorn main:app --reload
-
-        
-
-
-
 ![Screenshot (30)](https://github.com/user-attachments/assets/4934d9cd-c727-4d3d-9592-647e8d10d99f)
 
 
@@ -133,7 +106,7 @@ yarn dev
 
 The frontend will be available at:
 
--📍 http://localhost:5173
+- 📍 http://localhost:5173
 
 
 **❣️Have fun coding with Shakthivel Murugavel❣️**
