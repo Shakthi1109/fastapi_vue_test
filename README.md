@@ -26,6 +26,9 @@ API docs: http://127.0.0.1:8000/docs
 
 
 
+![Screenshot (30)](https://github.com/user-attachments/assets/4934d9cd-c727-4d3d-9592-647e8d10d99f)
+
+
 
 # 🎮 Twitch Video Search Web App
 
