@@ -3,7 +3,6 @@ import httpx
 from dotenv import load_dotenv
 from db.mongo import test_mongo_connection, db_write_search_history
 
-
 # Getting credentials from environment file
 load_dotenv()
 
@@ -72,6 +71,7 @@ async def get_twitch_videos(game_id: int, twitch_access_token: str):
             print(f"Error: {response.status_code} - {response.text}")
             return None
         
+
 
 async def search_videos_by_game(game_name: str):
     token = await get_twitch_token()

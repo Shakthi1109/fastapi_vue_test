@@ -8,7 +8,7 @@ export const searchVideos = async (game) => {
 
     console.log(response.data); // Log the entire response to check if the structure is correct
 
-    // Ensure the data has the `data` property and it's an array
+    // Ensure the data has the data property and it's an array
     if (response.data && Array.isArray(response.data)) {
       return response.data.map((video) => ({
         id: video.id,
