@@ -29,7 +29,6 @@ API docs: http://127.0.0.1:8000/docs
 ![Screenshot (30)](https://github.com/user-attachments/assets/4934d9cd-c727-4d3d-9592-647e8d10d99f)
 
 
-
 # 🎮 Twitch Video Search Web App
 
 This full-stack web app lets users search for Twitch game videos and view trending search terms using:
@@ -60,15 +59,15 @@ This full-stack web app lets users search for Twitch game videos and view trendi
 
 ## 🖥️ Backend Setup (FastAPI)
 
-1. **Clone the repository:**
+**1. Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/twitch-search-app.git
-   cd twitch-search-app/backend-fastapi
+   git clone https://github.com/<your-username>/visibrain_test.git
+   cd visibrain_test/backend-fastapi
    ```
 
 
-2. **Create and activate a virtual environment:**
+**2. Create and activate a virtual environment:**
 
 On Windows:
 ```
@@ -82,49 +81,57 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-3. Install backend dependencies:
+**3. Install backend dependencies:**
+
 ``` pip install -r requirements.txt ```
 
 
-4. Create a .env file:
+**4. Create a .env file:**
 Create a file called .env in backend-fastapi/ with the following:
-
+````
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/test?retryWrites=true&w=majority
 TWITCH_CLIENT_ID=your_twitch_client_id
 TWITCH_CLIENT_SECRET=your_twitch_client_secret
+```
 
 
-5. Run the FastAPI server:
+**5. Run the FastAPI server:**
+```
 uvicorn main:app --reload
+```
 
 The backend API will be available at:
+
 📍 http://localhost:8000
 
 
 
 
-🌐 Frontend Setup (Vue.js)
+*🌐 Frontend Setup (Vue.js)*
 Navigate to frontend directory
 
 
-cd ../frontend-vue
+```cd ../frontend-vue```
 
 
 Install dependencies
 
-bash
-
+```
 npm install
 # or
 yarn install
+```
+
 Run the frontend dev server
 
-bash
-
+```
 npm run dev
 # or
 yarn dev
+```
 
 The frontend will be available at:
 📍 http://localhost:5173
 
+
+**Have fun coding with Shakthivel Murugavel**
