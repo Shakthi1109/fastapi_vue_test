@@ -34,10 +34,10 @@ export default {
 }
 .video-item {
   width: 250px;
-  background-color: #3c3c3c;
+  background-color: #f7b9ff;
   border-radius: 8px;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
 }
 .thumbnail {
   width: 100%;
@@ -45,7 +45,7 @@ export default {
 }
 .video-details {
   padding: 10px 0;
-  color: #fff;
+  color: #000000;
 }
 
 .video-info {
@@ -54,6 +54,8 @@ export default {
   text-align: center;
   margin-bottom: 20px;
   font-size: 17px;
+  font-weight: bold;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 </style>
