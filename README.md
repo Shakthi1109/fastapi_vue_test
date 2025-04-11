@@ -2,6 +2,7 @@
 
 ![Screenshot (30)](https://github.com/user-attachments/assets/4934d9cd-c727-4d3d-9592-647e8d10d99f)
 
+
 This full-stack web app lets users search for Twitch game videos and view trending search terms using:
 
 - ⚙️ **FastAPI** (Python backend)
@@ -60,9 +61,9 @@ source venv/bin/activate
 **4. Create a .env file:**
 Create a file called .env in backend-fastapi/ with the following:
 ```
-MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/test?retryWrites=true&w=majority
-TWITCH_CLIENT_ID=your_twitch_client_id
-TWITCH_CLIENT_SECRET=your_twitch_client_secret
+TWITCH_CLIENT_ID=your-client-id
+TWITCH_CLIENT_SECRET=your-client-secret
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority&appName=<Cluster>
 ```
 
 
