@@ -73,10 +73,14 @@ export default {
 h1 {
   text-align: center;
   margin-top: 20px;
+  color: rgb(255, 255, 255);
+  text-shadow: -2px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
 }
 
 .info {
   padding-top: 20px;
   font-size: 16px;
+  font-weight: bold;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 </style>
