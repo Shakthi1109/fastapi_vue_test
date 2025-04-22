@@ -84,11 +84,6 @@ async def search_videos_by_game(game_name: str):
         
         db_check = await test_mongo_connection()
         if db_check:
-            print("db_check success: "+ db_check)
-        else:
-            print("DB not working")
-        await db_write_search_history(game_name)
+            await db_write_search_history(game_name)        
     
     return videos
-
-
