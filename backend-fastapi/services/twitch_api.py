@@ -87,5 +87,3 @@ async def search_videos_by_game(game_name: str):
             await db_write_search_history(game_name)        
     
     return videos
-
-
