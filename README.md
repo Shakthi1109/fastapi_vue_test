@@ -35,7 +35,7 @@ This full-stack web app lets users search for Twitch game videos and view trendi
 
    ```bash
    git clone https://github.com/Shakthi1109/fastapi_vue_test.git
-   cd visibrain_test/backend-fastapi
+   cd fastapi_vue_test/backend-fastapi
    ```
 
 
